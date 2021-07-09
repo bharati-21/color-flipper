@@ -1,19 +1,32 @@
 const btnChangeColor = document.querySelector('.btn-change-color');
 const colorCode = document.querySelector('.color-code');
-const simple = document.querySelector('.simple');
-const hex = document.querySelector('.hex');
+const btnRgb = document.querySelector('.btn-rgb');
+const btnHex = document.querySelector('.btn-hex');
 
-let generateHexColors = false;
+let hex = false;
+
 
 let currentBgColor = '#FFC2C3';
 colorCode.textContent = currentBgColor;
 
 btnChangeColor.addEventListener('click', changeBgColor);
+btnHex.addEventListener('click',(e) => {
+    e.preventDefault();
+    hex = true;
+});
+
+btnRgb.addEventListener('click', (e)=> {
+    e.preventDefault();
+    hex = false;
+})
 
 
 function changeBgColor(e) {
     e.preventDefault();
     
-    document.body.style.backgroundColor = currentBgColor;    ;
+    document.body.style.backgroundColor = currentBgColor; 
+
+    currentBgColor = generateRandomColors();
 }
+
 
