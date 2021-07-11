@@ -10,15 +10,15 @@ let currentBgColor = '#FFC2C3';
 colorCode.textContent = currentBgColor;
 
 btnChangeColor.addEventListener('click', changeBgColor);
-btnHex.addEventListener('click',(e) => {
-    e.preventDefault();
-    hex = true;
-});
+// btnHex.addEventListener('click',(e) => {
+//     e.preventDefault();
+//     hex = true;
+// });
 
-btnRgb.addEventListener('click', (e)=> {
-    e.preventDefault();
-    hex = false;
-})
+// btnRgb.addEventListener('click', (e)=> {
+//     e.preventDefault();
+//     hex = false;
+// })
 
 
 function changeBgColor(e) {
@@ -27,6 +27,15 @@ function changeBgColor(e) {
     document.body.style.backgroundColor = currentBgColor; 
 
     currentBgColor = generateRandomColors();
+    colorCode.textContent = currentBgColor;
+    console.log((Math.floor(Math.random() * 0xffffff) + 1).toString(16));
+}
+
+function generateRandomColors() {
+    const r = Math.floor(Math.random() * 255) + 1;
+    const g = Math.floor(Math.random() * 255) + 1;
+    const b = Math.floor(Math.random() * 255) + 1;
+    return "rgb("+r+", "+g+", "+b+")";
 }
 
 
