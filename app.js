@@ -56,7 +56,7 @@ function generateRandomColors() {
     }
     const hexColor = (Math.floor(Math.random() * 0xffffff) + 1).toString(16);
 
-    nextBgCode = "Hex";
+    nextBgCode = "HEX";
     return "#"+hexColor;
 }
 
