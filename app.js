@@ -10,15 +10,16 @@ let currentBgColor = '#FFC2C3';
 colorCode.textContent = currentBgColor;
 
 btnChangeColor.addEventListener('click', changeBgColor);
-// btnHex.addEventListener('click',(e) => {
-//     e.preventDefault();
-//     hex = true;
-// });
 
-// btnRgb.addEventListener('click', (e)=> {
-//     e.preventDefault();
-//     hex = false;
-// })
+btnHex.addEventListener('click',(e) => {
+    e.preventDefault();
+    hex = true;
+});
+
+btnRgb.addEventListener('click', (e)=> {
+    e.preventDefault();
+    hex = false;
+})
 
 
 function changeBgColor(e) {
@@ -28,14 +29,18 @@ function changeBgColor(e) {
 
     currentBgColor = generateRandomColors();
     colorCode.textContent = currentBgColor;
-    console.log((Math.floor(Math.random() * 0xffffff) + 1).toString(16));
+    console.log();
 }
 
 function generateRandomColors() {
-    const r = Math.floor(Math.random() * 255) + 1;
-    const g = Math.floor(Math.random() * 255) + 1;
-    const b = Math.floor(Math.random() * 255) + 1;
-    return "rgb("+r+", "+g+", "+b+")";
+    if(!hex) {
+        const r = Math.floor(Math.random() * 255) + 1;
+        const g = Math.floor(Math.random() * 255) + 1;
+        const b = Math.floor(Math.random() * 255) + 1;
+        return "rgb("+r+", "+g+", "+b+")";
+    }
+    const hexColor = (Math.floor(Math.random() * 0xffffff) + 1).toString(16);
+    return "#"+hexColor;
 }
 
 
