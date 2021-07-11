@@ -53,6 +53,26 @@ section {
     align-items: center;
 }
 
+.color-info {
+    padding: 1.5rem 2rem;
+    margin: 1rem 0 2rem 0;
+    background-color: #000;
+    color: #fff;
+    display: inline-block; 
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+p.hero {
+    margin-bottom: 0.5rem;
+}
+
+span.current-color, span.current-color-code {
+    font-weight: normal;
+    color: #42d3ff;
+}
+
 .bg-color {
     padding: 1rem 2rem;
     background-color: #333;
@@ -78,6 +98,6 @@ a.btn-change-color:hover {
 }
 
 
-.color-code {
+.next-color {
     color:#42d3ff;
 }
